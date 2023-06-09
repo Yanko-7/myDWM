@@ -84,7 +84,10 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
-	/* modifier                     key        function        argument */
+	/* modifier                     key        function        argument */	
+	{ Mod1Mask,                     XK_F1,      spawn,         SHCMD("amixer sset Master toggle") },
+	{ Mod1Mask,                     XK_F2,      spawn,         SHCMD("amixer sset Master 5%- ") },
+	{ Mod1Mask,                     XK_F3,      spawn,         SHCMD("amixer sset Master 5%+ ") },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ ControlMask|Mod1Mask,         XK_t,	   spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
